@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  points_team: 1
+  points_audience: 1
+  state: MyString
+  current_question_number: 1
+
+two:
+  points_team: 1
+  points_audience: 1
+  state: MyString
+  current_question_number: 1

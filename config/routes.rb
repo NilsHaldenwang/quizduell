@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get "presentation/index"
+  get "presentation/view_state"
+  get "presentation/starting"
+  get "presentation/points_and_rounds"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
