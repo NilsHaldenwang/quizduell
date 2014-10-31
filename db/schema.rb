@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20141021134627) do
   create_table "questions", force: true do |t|
     t.integer  "number"
     t.string   "correct_answer"
+    t.string   "team_answer"
+    t.string   "audience_answer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

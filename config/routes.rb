@@ -2,7 +2,26 @@ Rails.application.routes.draw do
   get "presentation/index"
   get "presentation/view_state"
   get "presentation/starting"
+  get "presentation/showing_question"
+  get "presentation/audience_answering"
+  get "presentation/team_answering"
+  get "presentation/showing_team_answer"
+  get "presentation/showing_audience_answer"
   get "presentation/points_and_rounds"
+  get "presentation/showing_correct_answer"
+
+  get "admin/index"
+  post "admin/change_state"
+  post "admin/next_question"
+  post "admin/note_team_answer"
+  post "admin/show_audience_answer"
+  post "admin/show_correct_answer"
+
+  get "answer/show"
+  get "answer/reload_check"
+  post "answer/submit_answer"
+
+  root to: "answer#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

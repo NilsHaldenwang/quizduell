@@ -1,0 +1,11 @@
+<h2 style="margin-bottom: 20px;">Schon geantwortet...</h2>
+
+<p class="lead">Sie hatten die aktuelle Frage bereits beantwortet.</p>
+<p class="lead">Bitte warten Sie bis zur nächsten Frage-Runde und wählen Sie dann unten "Zur nächsten Frage".</p>
+
+<%= form_tag '/answer/show', method: :get do %>
+	<%= bootstrap_submit_button "Zur nächsten Frage" %>
+<% end %>
+
+<!-- Reload Checking (see questions.js) -->
+<script type="text/javascript">enable_reload_check();</script>

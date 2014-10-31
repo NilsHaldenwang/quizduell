@@ -21,13 +21,19 @@
 
 
     <style type="text/css">
+      body:after{
+          display:none;
+          content: url("/assets/team_sprite.png") url("/assets/audience_sprite.png") url("/assets/frage1.jpg") url("/assets/frage1_antwort.jpg") url("/assets/frage2.jpg") url("/assets/frage2_antwort.jpg");
+      }
+
       body {
-        /* background-image: url('<%= asset_path "bg-mesh.png" %>'); */
-        /* font-family: 'unibody8'; */
+        font-family: "Calibri";
+        color: white;
+        background-repeat: no-repeat;
         font-size: 30px;
-        color: rgb(140, 255, 0);
         margin: 0px;
         padding: 0px;
+        background-color: rgb(75, 121, 145);
       }
 
       table {
@@ -43,20 +49,18 @@
 
       .footer {
         margin-bottom: 10px;
-        /* background-image: url('<%= asset_path "bg-mesh-green.png" %>'); */
-        color: black;
+        color: white;
         font-size: 45px;
       }
 
       .footer-line {
-        /* background-image: url('<%= asset_path "bg-mesh-green.png" %>'); */
         height: 5px;
       }
 
       .footer-container {
         position: absolute;
         left: 0;
-        top: 0px; /* 673 */
+        top: 0px;
         width: 1021px;
       }
 
@@ -67,6 +71,101 @@
         width: 1021px;
       }
 
+      .team_A {
+        position: absolute;
+        top: 230px;
+        left: 375px;
+        width: 150px;
+        height: 90px;
+      }
+
+      .audience_A {
+        position: absolute;
+        top: 230px;
+        left: 15px;
+        width: 150px;
+        height: 90px;
+      }
+
+       .team_B {
+        position: absolute;
+        top: 230px;
+        left: 865px;
+        width: 150px;
+        height: 90px;
+      }
+
+      .audience_B {
+        position: absolute;
+        top: 230px;
+        left: 490px;
+        width: 150px;
+        height: 90px;
+      }
+
+      .team_C {
+        position: absolute;
+        top: 440px;
+        left: 375px;
+        width: 150px;
+        height: 90px;
+      }
+
+      .audience_C {
+        position: absolute;
+        top: 440px;
+        left: 15px;
+        width: 150px;
+        height: 90px;
+      }
+
+      .team_D {
+        position: absolute;
+        top: 440px;
+        left: 865px;
+        width: 150px;
+        height: 90px;
+      }
+
+      .audience_D {
+        position: absolute;
+        top: 440px;
+        left: 490px;
+        width: 150px;
+        height: 90px;
+      }
+
+      .A_percentage {
+        position: absolute;
+        top: 414px;
+        left: 436px;
+      }
+
+      .B_percentage {
+        position: absolute;
+        top: 414px;
+        left: 914px;
+      }
+
+      .C_percentage {
+        position: absolute;
+        top: 624px;
+        left: 436px;
+      }
+
+      .D_percentage {
+        position: absolute;
+        top: 624px;
+        left: 914px;
+      }
+
+      #team_score {
+        font-size: 120px;
+      }
+
+      #audience_score {
+        font-size: 120px;
+      }
 
     </style>
   </head>
@@ -77,9 +176,9 @@
 
         <table cellspacing="0" style="width: 100%;" class="footer">
           <tr>
-            <td style="width: 250px;"><span id="team_score"></span></td>
-            <td style="text-align: center;"><span id="round_number"></span></td>
-            <td style="text-align: right; width: 250px;"><span id="audience_score">&nbsp;</span></td>
+            <td style="width: 250px;"><span id="team_score"></span> Profs</td>
+            <td style="text-align: center;">Runde <span id="round_number"></span></td>
+            <td style="text-align: right; width: 250px;">Alumni <span id="audience_score">&nbsp;</span></td>
           </tr>
         </table>
 
@@ -87,6 +186,7 @@
         </div>
 
       </div>
+
 
       <div id="ajax-container">
       </div>

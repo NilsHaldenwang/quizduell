@@ -1,0 +1,10 @@
+<h2 style="margin-bottom: 30px;">Antwortmöglichkeiten</h2>
+
+<%= form_tag '/answer/submit_answer', method: :post do %>
+  <div>
+    <% ["A", "B", "C", "D"].each do |answer| %>
+      <%= bootstrap_submit_button answer, "answer_char", answer  %>
+      <div style="margin-top: 20px;"></div>
+    <% end %>
+  </div>
+<% end %>

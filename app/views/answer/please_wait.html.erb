@@ -1,0 +1,8 @@
+<h2 style="margin-bottom: 30px;">Im Moment können Sie keine Frage beantworten.</h2>
+
+<%= form_tag '/answer/show', method: :get do %>
+  <%= bootstrap_submit_button "... und jetzt?" %>
+<% end %>
+
+<!-- Reload Checking (see questions.js) -->
+<script type="text/javascript">enable_reload_check();</script>
