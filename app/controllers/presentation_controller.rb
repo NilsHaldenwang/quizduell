@@ -31,8 +31,19 @@ class PresentationController < ApplicationController
   end
 
   def showing_audience_answer
-    @team_answer = GameState.instance.current_question.team_answer
-    @audience_answer = GameState.instance.current_question.audience_answer
+    gs = GameState.instance
+    cq = gs.current_question
+
+    @team_answer = cq.team_answer
+    @audience_answer = cq.audience_answer
+
+    total_answers = cq.answers.count.to_f
+
+    @percentage_a = (cq.answers.where(value: "A").count * 100 / total_answers).round
+    @percentage_b = (cq.answers.where(value: "B").count * 100 / total_answers).round
+    @percentage_c = (cq.answers.where(value: "C").count * 100 / total_answers).round
+    @percentage_d = (cq.answers.where(value: "D").count * 100 / total_answers).round
+
   end
 
   def showing_correct_answer
@@ -40,6 +51,15 @@ class PresentationController < ApplicationController
     @team_answer = gs.current_question.team_answer
     @audience_answer = gs.current_question.audience_answer
     @current_question_number = gs.current_question_number
+
+    cq = gs.current_question
+    total_answers = cq.answers.count.to_f
+
+    @percentage_a = (cq.answers.where(value: "A").count * 100 / total_answers).round
+    @percentage_b = (cq.answers.where(value: "B").count * 100 / total_answers).round
+    @percentage_c = (cq.answers.where(value: "C").count * 100 / total_answers).round
+    @percentage_d = (cq.answers.where(value: "D").count * 100 / total_answers).round
+
   end
 
   def points_and_rounds

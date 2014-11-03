@@ -1,2 +1,7 @@
 <%= team_sprite(@team_answer) %>
 <%= audience_sprite(@audience_answer) %>
+
+<%= content_tag(:span, "#{@percentage_a}%", class: "percentage A_percentage") %>
+<%= content_tag(:span, "#{@percentage_b}%", class: "percentage B_percentage") %>
+<%= content_tag(:span, "#{@percentage_c}%", class: "percentage C_percentage") %>
+<%= content_tag(:span, "#{@percentage_d}%", class: "percentage D_percentage") %>

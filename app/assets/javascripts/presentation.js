@@ -1,8 +1,21 @@
 var current_state = "";
+var loaded = true;
 
 var observe_view_state = function(){
   $.getJSON('view_state', function (data) {
     if(data.view_state !== current_state) {
+      if(loaded){
+        if(data.view_state != 'showing_correct_answer' || data.view_state != 'starting' || data.view_state == 'finished'){
+          $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'.jpg")');
+        }
+
+        if(data.view_state == 'showing_correct_answer'){
+          $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'_antwort.jpg")');
+        }
+      }
+
+      loaded = false;
+
       current_state = data.view_state;
 
       $.ajax({
@@ -20,6 +33,7 @@ var observe_view_state = function(){
         if(data.view_state == 'showing_correct_answer'){
           $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'_antwort.jpg")');
         }
+
 
         //change round if needed and update points
         observe_points_and_round();
