@@ -5,6 +5,7 @@ class CreateGameStates < ActiveRecord::Migration
       t.integer :points_audience
       t.string :state
       t.integer :current_question_number
+      t.string :audience_winner
 
       t.timestamps
     end

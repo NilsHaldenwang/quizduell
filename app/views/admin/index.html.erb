@@ -22,4 +22,9 @@
   <%= bootstrap_admin_button_form("Auflösung", "/admin/show_correct_answer") %>
 <% elsif @game_state.showing_correct_answer? %>
   <%= bootstrap_admin_button_form("Nächste Frage", "/admin/next_question") %>
+  <%= bootstrap_admin_button_form("Spiel beenden", "/admin/finished", {}, "btn-danger pull-right") %>
+<% elsif @game_state.finished? || @game_state.show_winner?%>
+  <% GameState.instance.list_of_possible_winners.each do |k, v| %>
+    <%= bootstrap_admin_button_form("#{k}: #{v}", "/admin/show_winner", {winner_ip: k}) %>
+  <% end %>
 <% end %>

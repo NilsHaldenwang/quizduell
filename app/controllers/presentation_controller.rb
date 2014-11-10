@@ -26,6 +26,19 @@ class PresentationController < ApplicationController
     render nothing: true
   end
 
+  def finished
+    points_team = GameState.instance.points_team
+    points_audience = GameState.instance.points_audience
+
+    if points_team > points_audience
+      @win_notification = "Gewonnen haben: <br/> Die Profs".html_safe
+    elsif points_audience > points_team
+      @win_notification = "Gewonnen haben: <br/> Die Alumni".html_safe
+    else
+      @win_notification = "Unentschieden"
+    end
+  end
+
   def showing_team_answer
     @team_answer = GameState.instance.current_question.team_answer
   end

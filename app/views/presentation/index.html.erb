@@ -23,7 +23,13 @@
     <style type="text/css">
       body:after{
           display:none;
-          content: url("/assets/team_sprite.png") url("/assets/audience_sprite.png") url("/assets/frage1.jpg") url("/assets/frage1_antwort.jpg") url("/assets/frage2.jpg") url("/assets/frage2_antwort.jpg");
+          content: url("/assets/hintergrund.jpg")
+          url("/assets/team_sprite.png")
+          url("/assets/audience_sprite.png")
+          url("/assets/frage1.jpg")
+          url("/assets/frage1_antwort.jpg")
+          url("/assets/frage2.jpg")
+          url("/assets/frage2_antwort.jpg");
       }
 
       body {
@@ -34,6 +40,14 @@
         margin: 0px;
         padding: 0px;
         background-color: rgb(75, 121, 145);
+      }
+
+      .win_notification {
+        font-family: "Calibri";
+        color: white;
+        font-size: 72px;
+        text-align: center;
+        margin-top: 200px;
       }
 
       table {
@@ -182,9 +196,9 @@
 
         <table cellspacing="0" style="width: 100%;" class="footer">
           <tr>
-            <td style="width: 250px;"><span id="team_score"></span> Profs</td>
+            <td style="width: 400px;"><span id="team_score" style="margin-left: 50px"></span> Profs</td>
             <td style="text-align: center;">Runde <span id="round_number"></span></td>
-            <td style="text-align: right; width: 250px;">Alumni <span id="audience_score">&nbsp;</span></td>
+            <td style="text-align: right; width: 400px;">Alumni <span id="audience_score" style="margin-right: 50px">&nbsp;</span></td>
           </tr>
         </table>
 

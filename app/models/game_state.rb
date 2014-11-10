@@ -8,7 +8,8 @@ class GameState < ActiveRecord::Base
                                  :showing_team_answer,
                                  :showing_audience_answer,
                                  :showing_correct_answer,
-                                 :finished)
+                                 :finished,
+                                 :find_audience_winner)
 
   def GameState.instance
     GameState.first
@@ -18,4 +19,17 @@ class GameState < ActiveRecord::Base
     Question.where(number: self.current_question_number).first
   end
 
+  def list_of_possible_winners
+    correct_answer_counts = Hash.new(0)
+
+    Question.all.each do |q|
+      q.answers.each do |a|
+        if q.correct_answer == a.value
+          correct_answer_counts[a.ip] += 1
+        end
+      end
+    end
+
+    correct_answer_counts.sort_by {|k, v| -v}
+  end
 end

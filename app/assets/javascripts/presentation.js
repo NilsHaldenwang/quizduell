@@ -9,6 +9,10 @@ var observe_view_state = function(){
           $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'.jpg")');
         }
 
+        if(data.view_state == 'finished'){
+          $('body').css('background-image', 'url("/assets/hintergrund.jpg")');
+        }
+
         if(data.view_state == 'showing_correct_answer'){
           $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'_antwort.jpg")');
         }

@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141021134627) do
     t.integer  "points_audience"
     t.string   "state"
     t.integer  "current_question_number"
+    t.string   "audience_winner"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

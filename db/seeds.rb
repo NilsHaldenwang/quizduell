@@ -12,4 +12,3 @@ GameState.create(points_team: 0, points_audience: 0, current_question_number: 0,
 
 Question.create(number: 1, correct_answer: "A")
 Question.create(number: 2, correct_answer: "B")
-Question.create(number: 3, correct_answer: "C")

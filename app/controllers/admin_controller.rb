@@ -44,7 +44,6 @@ class AdminController < ApplicationController
   end
 
   def show_correct_answer
-
     gs = GameState.instance
     current_question = gs.current_question
 
@@ -58,6 +57,16 @@ class AdminController < ApplicationController
 
     GameState.instance.showing_correct_answer!
 
+    redirect_to action: :index
+  end
+
+  def finished
+    GameState.instance.finished!
+    redirect_to action: :index
+  end
+
+  def show_winner
+    GameState.instance.update_attribute(:audience_winner, params[:winner_ip])
     redirect_to action: :index
   end
 

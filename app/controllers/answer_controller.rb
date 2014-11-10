@@ -10,6 +10,14 @@ class AnswerController < ApplicationController
       else
         render "audience_answering"
       end
+    elsif @game_state.finished?
+      if @game_state.audience_winner == request.remote_ip
+        @won = true
+      else
+        @won = false
+      end
+
+      render "have_i_won"
     else
       render "please_wait"
     end
@@ -19,7 +27,7 @@ class AnswerController < ApplicationController
     @game_state = GameState.instance
 
     reload = nil
-    if @game_state.audience_answering? && !@game_state.current_question.was_answered_by?(request.remote_ip)
+    if (@game_state.audience_answering? && !@game_state.current_question.was_answered_by?(request.remote_ip)) || @game_state.finished?
       reload = true
     end
 
