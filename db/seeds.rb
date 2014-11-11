@@ -11,4 +11,12 @@
 GameState.create(points_team: 0, points_audience: 0, current_question_number: 0, state: GameState::STATE_STARTING)
 
 Question.create(number: 1, correct_answer: "A")
-Question.create(number: 2, correct_answer: "B")
+Question.create(number: 2, correct_answer: "C")
+Question.create(number: 3, correct_answer: "D")
+Question.create(number: 4, correct_answer: "B")
+Question.create(number: 5, correct_answer: "C")
+Question.create(number: 6, correct_answer: "A")
+Question.create(number: 7, correct_answer: "B")
+Question.create(number: 8, correct_answer: "B")
+Question.create(number: 9, correct_answer: "D")
+Question.create(number: 10, correct_answer: "C")
