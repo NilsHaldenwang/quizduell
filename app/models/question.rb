@@ -13,7 +13,7 @@ class Question < ActiveRecord::Base
 
   def compute_audience_answer!
     if answers.count == 0
-      ["A", "B", "C", "D"].each do |value|
+      ["A", "B", "C", "D"].shuffle.each do |value|
         answers.create(ip: "42", value: value)
       end
     end
