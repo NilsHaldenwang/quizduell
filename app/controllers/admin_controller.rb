@@ -44,6 +44,12 @@ class AdminController < ApplicationController
   end
 
   def show_correct_answer
+    GameState.instance.showing_correct_answer!
+
+    redirect_to action: :index
+  end
+
+  def assigning_points
     gs = GameState.instance
     current_question = gs.current_question
 
@@ -55,7 +61,7 @@ class AdminController < ApplicationController
       gs.update_attribute(:points_audience, gs.points_audience + 1)
     end
 
-    GameState.instance.showing_correct_answer!
+    GameState.instance.assigning_points!
 
     redirect_to action: :index
   end

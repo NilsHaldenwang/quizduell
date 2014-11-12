@@ -8,6 +8,7 @@ class GameState < ActiveRecord::Base
                                  :showing_team_answer,
                                  :showing_audience_answer,
                                  :showing_correct_answer,
+                                 :assigning_points,
                                  :finished,
                                  :find_audience_winner)
 

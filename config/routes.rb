@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "presentation/points_and_rounds"
   get "presentation/showing_correct_answer"
   get "presentation/finished"
+  get "presentation/assigning_points"
 
   get "admin/index"
   post "admin/change_state"
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   post "admin/show_correct_answer"
   post "admin/finished"
   post "admin/show_winner"
+  post "admin/assigning_points"
 
   get "answer/show"
   get "answer/reload_check"
