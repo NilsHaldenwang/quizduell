@@ -12,6 +12,12 @@ class Question < ActiveRecord::Base
   end
 
   def compute_audience_answer!
+    if answers.count == 0
+      ["A", "B", "C", "D"].each do |value|
+        answers.create(ip: "42", value: value)
+      end
+    end
+
     answer = answers.group(:value).count.max_by { |k, v| v}.first
     self.update_attribute(:audience_answer, answer)
     answer
