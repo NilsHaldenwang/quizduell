@@ -11,35 +11,35 @@ class PresentationController < ApplicationController
   end
 
   def starting
-    render nothing: true
+    render nothing: true, layout: false
   end
 
   def audience_answering
-    render nothing: true
+    render nothing: true, layout: false
   end
 
   def team_answering
-    render nothing: true
+    render nothing: true, layout: false
   end
 
   def showing_question
-    render nothing: true
+    render nothing: true, layout: false
   end
 
   def showing_answer_a
-    render nothing: true
+    render nothing: true, layout: false
   end
 
   def showing_answer_b
-    render nothing: true
+    render nothing: true, layout: false
   end
 
   def showing_answer_c
-    render nothing: true
+    render nothing: true, layout: false
   end
 
   def showing_answer_d
-    render nothing: true
+    render nothing: true, layout: false
   end
 
   def assigning_points
@@ -56,7 +56,7 @@ class PresentationController < ApplicationController
     @percentage_c = (cq.answers.where(value: "C").count * 100 / total_answers).round
     @percentage_d = (cq.answers.where(value: "D").count * 100 / total_answers).round
 
-    render :showing_audience_answer
+    render :showing_audience_answer, layout: false
   end
 
   def finished
@@ -74,6 +74,7 @@ class PresentationController < ApplicationController
 
   def showing_team_answer
     @team_answer = GameState.instance.current_question.team_answer
+    render :showing_team_answer, layout: false
   end
 
   def showing_audience_answer
@@ -90,6 +91,7 @@ class PresentationController < ApplicationController
     @percentage_c = (cq.answers.where(value: "C").count * 100 / total_answers).round
     @percentage_d = (cq.answers.where(value: "D").count * 100 / total_answers).round
 
+    render :showing_audience_answer, layout: false
   end
 
   def showing_correct_answer
@@ -106,6 +108,7 @@ class PresentationController < ApplicationController
     @percentage_c = (cq.answers.where(value: "C").count * 100 / total_answers).round
     @percentage_d = (cq.answers.where(value: "D").count * 100 / total_answers).round
 
+    render :showing_correct_answer, layout: false
   end
 
   def points_and_rounds

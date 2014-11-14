@@ -17,8 +17,24 @@ var observe_view_state = function(){
           $('body').css('background-image', 'url("/assets/hintergrund.jpg")');
         }
 
-        if(data.view_state == 'showing_correct_answer'){
+        if(data.view_state == 'showing_correct_answer' || data.view_state == 'assigning_points'){
           $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'_antwort.jpg")');
+        }
+
+        if(data.view_state == 'showing_answer_a'){
+          $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'a.jpg")');
+        }
+
+        if(data.view_state == 'showing_answer_b'){
+          $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'b.jpg")');
+        }
+
+        if(data.view_state == 'showing_answer_c'){
+          $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'c.jpg")');
+        }
+
+        if(data.view_state == 'showing_answer_d' || data.view_state == 'showing_team_answer' || data.view_state == 'showing_audience_answer' || data.view_state == 'showing_correct_answer' || data.view_state == 'assigning_points'){
+          $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'d.jpg")');
         }
 
       }
