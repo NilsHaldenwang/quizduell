@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get "presentation/showing_correct_answer"
   get "presentation/finished"
   get "presentation/assigning_points"
+  get "presentation/showing_answer_a"
+  get "presentation/showing_answer_b"
+  get "presentation/showing_answer_c"
+  get "presentation/showing_answer_d"
 
   get "admin/index"
   post "admin/change_state"

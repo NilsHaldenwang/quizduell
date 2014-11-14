@@ -20,6 +20,7 @@ var observe_view_state = function(){
         if(data.view_state == 'showing_correct_answer'){
           $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'_antwort.jpg")');
         }
+
       }
 
       loaded = false;
@@ -44,6 +45,22 @@ var observe_view_state = function(){
 
         if(data.view_state == 'finished'){
           $('body').css('background-image', 'url("/assets/hintergrund.jpg")');
+        }
+
+        if(data.view_state == 'showing_answer_a'){
+          $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'a.jpg")');
+        }
+
+        if(data.view_state == 'showing_answer_b'){
+          $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'b.jpg")');
+        }
+
+        if(data.view_state == 'showing_answer_c'){
+          $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'c.jpg")');
+        }
+
+        if(data.view_state == 'showing_answer_d'){
+          $('body').css('background-image', 'url("/assets/frage'+ data.current_question_number +'d.jpg")');
         }
 
 

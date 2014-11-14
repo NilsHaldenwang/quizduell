@@ -26,6 +26,22 @@ class PresentationController < ApplicationController
     render nothing: true
   end
 
+  def showing_answer_a
+    render nothing: true
+  end
+
+  def showing_answer_b
+    render nothing: true
+  end
+
+  def showing_answer_c
+    render nothing: true
+  end
+
+  def showing_answer_d
+    render nothing: true
+  end
+
   def assigning_points
     gs = GameState.instance
     @team_answer = gs.current_question.team_answer

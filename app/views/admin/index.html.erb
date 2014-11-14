@@ -8,6 +8,14 @@
 <% if @game_state.starting? %>
   <%= bootstrap_admin_button_form("Frage stellen", "/admin/next_question") %>
 <% elsif @game_state.showing_question? %>
+  <%= bootstrap_admin_button_form("Antwort A zeigen", "/admin/change_state", {state: GameState::STATE_SHOWING_ANSWER_A}) %>
+<% elsif @game_state.showing_answer_a? %>
+  <%= bootstrap_admin_button_form("Antwort B zeigen", "/admin/change_state", {state: GameState::STATE_SHOWING_ANSWER_B}) %>
+<% elsif @game_state.showing_answer_b? %>
+  <%= bootstrap_admin_button_form("Antwort C zeigen", "/admin/change_state", {state: GameState::STATE_SHOWING_ANSWER_C}) %>
+<% elsif @game_state.showing_answer_c? %>
+  <%= bootstrap_admin_button_form("Antwort D zeigen", "/admin/change_state", {state: GameState::STATE_SHOWING_ANSWER_D}) %>
+<% elsif @game_state.showing_answer_d? %>
   <%= bootstrap_admin_button_form("Publikumsantworten einsammeln", "/admin/change_state", {state: GameState::STATE_AUDIENCE_ANSWERING}) %>
 <% elsif @game_state.audience_answering? %>
   <%= bootstrap_admin_button_form("Teamantwort einsammeln", "/admin/change_state", {state: GameState::STATE_TEAM_ANSWERING}) %>
